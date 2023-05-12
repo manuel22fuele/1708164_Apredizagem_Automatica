@@ -10,8 +10,8 @@ data = pd.read_csv("../Lab 1/Datasets/optdigits.tes", sep=",", header= None)
 evaluation_data=data[:]
 data_X=evaluation_data.iloc[:,0:64]
 data_Y=evaluation_data.iloc[:,64]
-print(type(evaluation_data))
-print(type(data_X))
+"""print(type(evaluation_data))
+print(type(data_X))"""
 loaded_model = p1.load(open('../Lab 1/Datasets/optdigits_predictor', 'rb'))
 print("Coefficients: \n", loaded_model.coef_)
 y_pred=loaded_model.predict(data_X)
