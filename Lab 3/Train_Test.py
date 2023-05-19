@@ -25,16 +25,18 @@ print(overlaid_dataset)"""
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.33, random_state=42)
 
-pca = PCA(n_components=2) # projetamos usando PCA
-pca.fit(X_train)
+pca_train = PCA(n_components=2) # projetamos usando PCA
+pca_train.fit(X_train)
 
-preditor_pca_tra = pca.fit_transform(X_train)
+preditor_pca_tra = pca_train.fit_transform(X_train)
 preditor_Pickle = open('../Lab 3/Datasets/Train_predictor_pca.csv', 'wb')
 p1.dump(preditor_pca_tra, preditor_Pickle)
 print('File saved')
 
-pca.fit(X_test, y_test)
-preditor_pca_tes = pca.fit(X_test, y_test)
+pca_test = PCA(n_components=2)
+pca_test.fit(X_test)
+
+preditor_pca_tes = pca_test.fit_transform(X_test)
 preditor_Pickle = open('../Lab 3/Datasets/Test_predictor_pca.csv', 'wb')
 p1.dump(preditor_pca_tes, preditor_Pickle)
 print('File saved')

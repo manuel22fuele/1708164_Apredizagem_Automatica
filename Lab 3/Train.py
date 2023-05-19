@@ -21,8 +21,8 @@ X, y = make_blobs(n_samples=n_samples, random_state=random_state)
 y_pred = KMeans(n_clusters=n_samples, random_state=random_state).fit_predict(X)
 plt.subplot(221)
 plt.scatter(X[:, 1], X[:, 1], c=y_pred)
+
 # Plot the centroids as a black/blue O - Calculate from kmeans++
-from sklearn.cluster import kmeans_plusplus
 kmeans = KMeans(init="k-means++", n_clusters=2, n_init=10)
 kmeans.fit(X)
 # Plot the centroids as a black/blue O
