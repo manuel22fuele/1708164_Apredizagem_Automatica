@@ -16,10 +16,10 @@ classifier = MLPClassifier(hidden_layer_sizes=(150,100,50), max_iter=100000,
 activation = 'relu',solver='adam',random_state=1)
 # ativations é o tipo de ativação de cada neurónio
 #Solver é o tipo de treino critério de paragem para as épocas (iterações)
-classifier.fit(X_train, Y_train)
+predictorMLPC_heart_4 = classifier.fit(X_train, Y_train)
 print("x=",X_train[1])
 print("y=",Y_train[1])
 #Predicting y for X_val
 filename = '../Lab 4/Dataset/predictorMLPC_heart_4.sav'
-pickle.dump(classifier, open(filename, 'wb'))
+pickle.dump(predictorMLPC_heart_4, open(filename, 'wb'))
 print('File saved')
